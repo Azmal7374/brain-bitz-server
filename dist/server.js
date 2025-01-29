@@ -19,7 +19,7 @@ const config_1 = __importDefault(require("./app/config"));
 const http_1 = require("http");
 const socket_io_1 = require("socket.io");
 const socketHandler_1 = __importDefault(require("./app/utlis/socketHandler"));
-let server; // Explicitly type 'server' as 'Server'
+let server;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -31,7 +31,8 @@ function main() {
             // Set up Socket.IO
             const io = new socket_io_1.Server(httpServer, {
                 cors: {
-                    origin: '*',
+                    origin: 'https://brain-bitz-quiz-game.vercel.app/',
+                    credentials: true,
                 },
             });
             // Attach socket handler

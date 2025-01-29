@@ -6,7 +6,7 @@ import { createServer, Server } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import socketHandler from './app/utlis/socketHandler';
 
-let server: Server; // Explicitly type 'server' as 'Server'
+let server: Server; 
 
 async function main() {
   try {
@@ -20,7 +20,8 @@ async function main() {
     // Set up Socket.IO
     const io = new SocketIOServer(httpServer, {
       cors: {
-        origin: '*',
+        origin: 'https://brain-bitz-quiz-game.vercel.app/',
+        credentials: true,
       },
     });
 
