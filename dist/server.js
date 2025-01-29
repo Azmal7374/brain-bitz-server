@@ -28,11 +28,12 @@ function main() {
             console.log('Database connected successfully');
             // Start HTTP server
             const httpServer = (0, http_1.createServer)(app_1.default);
-            // Set up Socket.IO
-            const io = new socket_io_1.Server(httpServer, {
+            // Set up Socket.IO server
+            const io = new socket_io_1.Server(server, {
                 cors: {
-                    origin: 'https://brain-bitz-quiz-game.vercel.app/',
-                    credentials: true,
+                    origin: 'https://brain-bitz-quiz-game.vercel.app', // Specify allowed origin (production URL)
+                    methods: ['GET', 'POST'], // Allow both GET and POST methods
+                    credentials: true, // Enable credentials if required
                 },
             });
             // Attach socket handler

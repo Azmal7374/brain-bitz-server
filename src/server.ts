@@ -17,13 +17,14 @@ async function main() {
     // Start HTTP server
     const httpServer = createServer(app);
 
-    // Set up Socket.IO
-    const io = new SocketIOServer(httpServer, {
-      cors: {
-        origin: 'https://brain-bitz-quiz-game.vercel.app/',
-        credentials: true,
-      },
-    });
+   // Set up Socket.IO server
+const io = new SocketIOServer(server, {
+  cors: {
+    origin: 'https://brain-bitz-quiz-game.vercel.app', // Specify allowed origin (production URL)
+    methods: ['GET', 'POST'], // Allow both GET and POST methods
+    credentials: true, // Enable credentials if required
+  },
+});
 
     // Attach socket handler
     socketHandler(io);
