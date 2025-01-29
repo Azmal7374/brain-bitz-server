@@ -7,7 +7,12 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(
+  cors({
+    origin: ['http://localhost:3000', 'https://brain-bitz-quiz-game.vercel.app'],
+    credentials: true,
+  }),
+);
 // application routes
 app.use('/api', router);
 
