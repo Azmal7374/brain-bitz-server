@@ -16,7 +16,6 @@ exports.CategoryRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const category_service_1 = __importDefault(require("./category.service"));
 const router = express_1.default.Router();
-// Add new category
 router.post('/add', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, questions } = req.body;
@@ -32,7 +31,6 @@ router.post('/add', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         }
     }
 }));
-// Get all categories
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const categories = yield category_service_1.default.getCategories();

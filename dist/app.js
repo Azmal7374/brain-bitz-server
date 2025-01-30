@@ -13,7 +13,6 @@ app.use((0, cors_1.default)({
     origin: ['http://localhost:3000', 'https://ideal-unity-production.up.railway.app'],
     credentials: true,
 }));
-// application routes
 app.use('/api', routes_1.default);
 app.use(globalErrorHandler_1.default);
 app.use((req, res) => {

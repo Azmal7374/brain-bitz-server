@@ -3,7 +3,6 @@ import categoryService from './category.service';
 
 const router = express.Router();
 
-// Add new category
 router.post('/add', async (req, res) => {
   try {
     const { name, questions } = req.body;
@@ -18,7 +17,6 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// Get all categories
 router.get('/', async (req, res) => {
   try {
     const categories = await categoryService.getCategories();

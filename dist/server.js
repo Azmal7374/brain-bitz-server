@@ -31,14 +31,12 @@ function main() {
             // Set up Socket.IO server
             const io = new socket_io_1.Server(server, {
                 cors: {
-                    origin: 'https://ideal-unity-production.up.railway.app', // Specify allowed origin (production URL)
-                    methods: ['GET', 'POST'], // Allow both GET and POST methods
-                    credentials: true, // Enable credentials if required
+                    origin: 'https://ideal-unity-production.up.railway.app',
+                    methods: ['GET', 'POST'],
+                    credentials: true,
                 },
             });
-            // Attach socket handler
             (0, socketHandler_1.default)(io);
-            // Start listening
             server = httpServer.listen(config_1.default.port, () => {
                 console.log(`Server is running on port ${config_1.default.port}`);
             });
