@@ -29,11 +29,10 @@ function main() {
             // Start HTTP server
             const httpServer = (0, http_1.createServer)(app_1.default);
             // Set up Socket.IO server
-            const io = new socket_io_1.Server(server, {
+            const io = new socket_io_1.Server(httpServer, {
                 cors: {
                     origin: 'https://ideal-unity-production.up.railway.app',
                     methods: ['GET', 'POST'],
-                    credentials: true,
                 },
             });
             (0, socketHandler_1.default)(io);

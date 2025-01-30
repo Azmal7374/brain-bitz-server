@@ -18,11 +18,10 @@ async function main() {
     const httpServer = createServer(app);
 
    // Set up Socket.IO server
-const io = new SocketIOServer(server, {
+const io = new SocketIOServer(httpServer, {
   cors: {
     origin: 'https://ideal-unity-production.up.railway.app', 
     methods: ['GET', 'POST'],
-    credentials: true,
   },
 });
 
