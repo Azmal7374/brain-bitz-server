@@ -20,7 +20,7 @@ async function main() {
    // Set up Socket.IO server
 const io = new SocketIOServer(server, {
   cors: {
-    origin: 'https://brain-bitz-quiz-game.vercel.app', // Specify allowed origin (production URL)
+    origin: 'https://ideal-unity-production.up.railway.app', // Specify allowed origin (production URL)
     methods: ['GET', 'POST'], // Allow both GET and POST methods
     credentials: true, // Enable credentials if required
   },
